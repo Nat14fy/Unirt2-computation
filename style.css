@@ -56,3 +56,8 @@ body.transition .screen {
         height: 100vh;
     }
 }
+
+
+* {
+    cursor: url('像素鼠标.png'), auto; 
+}
