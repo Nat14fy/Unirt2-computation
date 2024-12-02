@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1 Computer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="screen" onclick="startTransition()">
+            <p>COMPUTER</p >
+        </div>
+    </div>
+
+    <script>
+        function startTransition() {
+            document.body.classList.add('transition');
+            
+            setTimeout(() => {
+                window.location.href = 'page2.html';  
+            }, 1000); 
+        }
+    </script>
+</body>
+</html>

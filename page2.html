@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2 Information and data<data value=""></data></title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: blue; 
+            font-family: 'Press Start 2P', sans-serif;
+            overflow: hidden;
+        }
+
+        .line {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .line span {
+            position: absolute;
+            font-size: 2rem;
+            animation: scroll 5s linear forwards;
+            white-space: nowrap;
+            color: #00ff00;
+        }
+
+        .line span:nth-child(1) { top: 20%; left: -100%; animation-delay: 0s; }
+        .line span:nth-child(1) { top: 150%; left: -100%; animation-delay: 0.3s; }
+        .line span:nth-child(2) { top: 50%; left: -100%; animation-delay: 0.5s; }
+        .line span:nth-child(3) { top: 10%; left: -100%; animation-delay: 1s; }
+        .line span:nth-child(4) { top: 70%; left: -100%; animation-delay: 1.5s; }
+        .line span:nth-child(5) { top: 30%; left: -100%; animation-delay: 2s; }
+        .line span:nth-child(6) { top: 60%; left: -100%; animation-delay: 2.5s; }
+        .line span:nth-child(7) { top: 80%; left: -100%; animation-delay: 3s; }
+        .line span:nth-child(8) { top: 40%; left: -100%; animation-delay: 3.5s; }
+        .line span:nth-child(9) { top: 60%; left: -100%; animation-delay: 4s; }
+        .line span:nth-child(10) { top: 30%; left: -100%; animation-delay: 4.5s; }
+        .line span:nth-child(11) { top: 670%; left: -100%; animation-delay: 5s; }
+        .line span:nth-child(12) { top: 20%; left: -100%; animation-delay: 5.5s; } 
+        .line span:nth-child(13) { top: 50%; left: -100%; animation-delay: 6s; }
+        .line span:nth-child(14) { top: 10%; left: -100%; animation-delay: 6.5s; }
+        .line span:nth-child(15) { top: 10%; left: -100%; animation-delay: 7s; }
+
+        @keyframes scroll {
+            0% {
+                left: -100%; 
+            }
+            100% {
+                left: 100%; 
+            }
+        }
+
+        .background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            height: auto;
+            opacity: 0; 
+            z-index: 2;
+            animation: fadeIn 0.1s forwards; 
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fixed-text {
+            position: fixed;
+            top: 50%; 
+            left: 59%; 
+            transform: translate(-50%, -95%); 
+            font-size: 3rem; 
+            color: #f2ff00; 
+            font-family: 'Press Start 2P', sans-serif;
+            z-index: 10; 
+            cursor: pointer; 
+        }
+
+        @keyframes fadeOutCode {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="line" id="codeEffect">
+        <span>01010101010101010101011010101010</span>
+        <span>0101010101010101010101010101010101010101010101010101</span>
+        <span>010101010101010101010101010101010101010101</span>
+        <span>0101010101010101010101010101010101010101010101010101</span>
+        <span>01010101010101010101010101010101</span>
+        <span>0101010101010101010101010101010101010101010101010101</span>
+        <span>0101010101010101010101010101010101010</span>
+        <span>0101010101010101010101010101010101010101010101010101</span>
+        <span>010101010101</span>
+        <span>01010101010101010101010101010101</span>
+        <span>0101010101010101010101010101010101010101010101010101</span>
+        <span>0101010101010101010101010101010101010101010101010101</span>
+        <span>0101010101010101010101010101010101010101010101010101</span>
+        <span>010101010101</span>
+        <span>010101010101</span>
+        <span>010101010101</span>
+    </div>
+
+    <div class="fixed-text" onclick="triggerEffect()">
+        INFORMATION AND DATA
+    </div>
+
+    <img src="电脑弹窗.jpg" alt="Background Image" class="background" id="backgroundImage">
+
+    <script>
+        function triggerEffect() {
+            const codeEffect = document.getElementById('codeEffect');
+            codeEffect.style.animation = "fadeOutCode 5s forwards";
+
+            const backgroundImage = document.getElementById('backgroundImage');
+            backgroundImage.style.animationPlayState = "running";
+
+            setTimeout(function () {
+                window.location.href = "page3.html"; 
+            }, 1000); 
+        }
+    </script>
+</body>
+</html>

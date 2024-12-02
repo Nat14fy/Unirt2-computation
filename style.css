@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    font-family: 'Press Start 2P', monospace;
+    background-color: #000; 
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('computer.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.screen {
+    background-color: blue;
+    width: 65vw; 
+    height: 79vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.screen p {
+    animation: blink 1s infinite step-start;
+    font-size: 10rem;
+    color: #00ff00
+}
+
+body.transition .screen {
+    animation: zoomIn 1.2s forwards; 
+}
+
+@keyframes zoomIn {
+    0% {
+        width: 67vw;
+        height: 80vh;
+    }
+    100% {
+        width: 100vw;
+        height: 100vh;
+    }
+}

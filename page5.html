@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 5 They Build a Virtual World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .image1, .image2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+        }
+
+        .image1 {
+            animation: shrink-fade-out 2s forwards; 
+        }
+
+        .image2 {
+            animation: fade-in 2s forwards; 
+            animation-delay: 2s; 
+        }
+
+        @keyframes shrink-fade-out {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .text{
+            position: absolute;
+            bottom: 10%;
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Press Start 2P', sans-serif;
+            color: greenyellow;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+        }
+
+        .text.show {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    </style>
+    <script>
+        function goToPage6(){
+            window.location.href="page6.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.body.addEventListener("click", goToPage6);
+            }, 2000);
+
+            setTimeout(() => {
+                document.querySelector('.text').classList.add('show');
+            }, 4000);
+        });
+    </script>
+</head>
+<body>
+    <img src="数码互联网带蜘蛛带小人.jpg" alt="First Image" class="image1">
+
+    <img src="地球像素.jpg" alt="Second Image" class="image2">
+
+    <div class="text">Virtual World</div>
+</body>
+</html>
